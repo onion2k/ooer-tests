@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test';
+import { HomePage } from './pageObjects/HomePage';
 
 test('homepage has expected title and h1', async ({ page, baseURL }) => {
-  const targetUrl = baseURL ?? 'https://example.com';
-  await page.goto(targetUrl);
+  const homePage = new HomePage(page);
+  await homePage.goto(baseURL);
 
-  await expect(page).toHaveTitle(/Example Domain/i);
-  await expect(page.locator('h1')).toHaveText('Example Domain');
+  await expect(homePage.page).toHaveTitle(/Ooer/i);
+  await expect(homePage.siteTitle).toHaveText(/Ooer/i);
 });

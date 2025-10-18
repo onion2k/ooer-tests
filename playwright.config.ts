@@ -12,7 +12,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
-    baseURL: process.env.BASE_URL ?? 'https://example.com',
+    baseURL: process.env.BASE_URL ?? 'https://ooer.com',
     trace: 'retain-on-failure',
     video: 'retry-with-video',
   },
